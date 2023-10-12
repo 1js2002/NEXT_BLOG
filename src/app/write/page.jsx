@@ -1,9 +1,8 @@
-"use client";
-
+"use client"
 import Image from "next/image";
 import styles from "./writePage.module.css";
 import { useEffect, useState } from "react";
-import "react-quill/dist/quill.bubble.css";
+
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import {
@@ -96,6 +95,8 @@ const WritePage = () => {
   };
 
   return (
+    typeof window !== 'undefined' ? <>
+
     <div className={styles.container}>
       <input
         type="text"
@@ -148,7 +149,7 @@ const WritePage = () => {
         Publish
       </button>
     </div>
-  );
+  </> : null);
 };
 
 export default WritePage;
